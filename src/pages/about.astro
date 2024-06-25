@@ -2,11 +2,16 @@
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
+import Card from "@/components/Card.astro";
 import { getEntry } from "astro:content";
+import type __AstroComponent_ from "./404.astro";
 
 const about = await getEntry("about", "-index");
-const { Content } = await about.render();
+const our_values = await getEntry('sections', 'our-values');
 const { title, description, meta_title, image } = about.data;
+const { values, vision, slogans } = our_values.data;
+const valueskeys = Object.keys(values);
+console.log(our_values.data);
 ---
 
 <Base
@@ -19,24 +24,46 @@ const { title, description, meta_title, image } = about.data;
     <div class="container">
       <div class="row justify-center">
         <div class="text-center md:col-10 lg:col-7">
-          {
-            image && (
-              <ImageMod
-                class="mx-auto mb-6 rounded-lg"
-                src={image}
-                width={200}
-                height={200}
-                alt={title}
-                format="webp"
-              />
-            )
-          }
-          <h2 set:html={markdownify(title)} class="h3 mb-6" />
+          <h1 set:html={markdownify(title)} class="mb-6" />
           <div class="content">
-            <Content />
+            <h3>{slogans.vision}</h3>
           </div>
+
         </div>
       </div>
     </div>
   </section>
+  <!-- Our values -->
+   <section class="section pt-14">
+    <div class="container">
+      {
+        image && (
+          <ImageMod
+            class="mx-auto mb-6 rounded-lg"
+            src={image}
+            alt={title}
+            format="webp"
+          />
+        )
+      }
+      <Card>
+          <header class="mb-5 md:mb-8">
+            <h2 set:html={markdownify(slogans.intro)} class="h4 md:mb-10 m-auto text-center md:w-2/3" />
+            <h3>We are guided by:</h3>
+          </header>
+          <div class="row">
+
+            {
+              valueskeys.map(key => (
+                <div class="mb:md-0 mb-6 md:col-6">
+                <h4 class="font-bold">{key}</h4>
+                <div>{values[key]}</div>
+              </div>
+            ))
+          }
+          </div>
+      </Card>
+      </div>
+      </section>
+  <!-- /Our values -->
 </Base>
