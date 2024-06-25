@@ -1,0 +1,54 @@
+.solutions {
+  position:relative;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  padding-top: 60px;
+  border-radius: var(--border-radius-primary);
+  background-color: var(--color-light-grey);
+
+  img {
+    border-radius: var(--border-radius-primary);
+
+    &.primary {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      width: 100px;
+    }
+  }
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .subtitle {
+  }
+
+  .tags {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    .idea {
+      margin-right: 12px;
+      font-size: 12px;
+      padding: 6px 12px;
+      background-color: var(--color-white);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      border-radius: var(--border-radius-light);
+      width: fit-content;
+    }
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+  }
+}

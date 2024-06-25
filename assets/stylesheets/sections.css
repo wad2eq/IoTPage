@@ -1,0 +1,17 @@
+section {
+  position: relative;
+  padding-left: var(--size-outer);
+  padding-right: var(--size-outer);
+  height: 100vh;
+  min-height: 900px;
+  width: 100%;
+}
+
+.section__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto
+}

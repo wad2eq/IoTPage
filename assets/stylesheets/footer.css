@@ -1,0 +1,14 @@
+.footer {
+  padding-left: var(--size-outer);
+  padding-right: var(--size-outer);
+  padding-top: var(--size-50-fixed);
+  padding-bottom:  var(--size-50-fixed);
+  background-color: var(--color-light-grey);
+  min-height: 60vh;
+
+  .footer__inner {
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

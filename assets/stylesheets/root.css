@@ -1,0 +1,78 @@
+:root {
+  --font-family-primary: ArizonaSerif, Georgia, serif;
+  --font-family-button-primary: ArizonaSans, Helvetica Neue, arial, sans-serif;
+  --font-size-primary: 62.5%;
+  --font-size-button-primary: 15px;
+  --font-weight-button-primary: 500;
+
+  --line-height-primary: 1.15;
+
+  --color-primary: rgb(25, 25, 125);
+  --color-white: rgb(251, 251, 251);
+  --color-black: rgb(0, 0, 0);
+  --color-light-grey: rgb(242, 245, 247);
+  --color-light-grey-secondary: rgb(232, 235, 237);
+  --color-dark-grey: rgb(50, 50, 50);
+  --color-lavender: rgba(225, 233, 255, 0.5);
+  --color-light-green: rgb(220, 239, 235);
+
+  --border-radius-light: 11px;
+  --border-radius-primary: 26px;
+  --border-radius-max: 100px;
+
+  --size-none: 0px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-30: 30px;
+  --size-40: 40px;
+  --size-50: 50px;
+  --size-60: 60px;
+  --size-70: 70px;
+  --size-80: 80px;
+  --size-90: 90px;
+  --size-100: 100px;
+  --size-75: 75px;
+  --size-outer: 20px;
+  --grid-columns: 14;
+  --grid-gutter: var(--size-grid-gutter);
+
+  --theme-bg-faint: rgba(255, 253, 249, .05);
+  --theme-bg-transparent: rgba(34, 34, 34, 0);
+  --theme-text: #080808;
+  --theme-text-hover: #d7dff5;
+  --theme-text-transparent: rgba(34, 34, 34, 0);
+  --theme-placeholder-text: rgba(255, 253, 249, .5);
+  --theme-rule: rgba(255, 253, 249, .1);
+  --theme-scrollbar-bg: #111;
+  --theme-scrollbar-fg: #555;
+  --theme-section-top-border: rgba(255, 253, 249, .5);
+  --theme-animation-border: rgba(255, 253, 249, .9);
+  --theme-expanding-frames-inactive-border: #f5f5f5;
+  --theme-footer-shadow-max-opacity: .5;
+}
+
+@media (min-width: 320px) {
+  :root {
+    --size-50: calc(30px + 20 * (100vw - 320px) / 1120);
+    --size-75: calc(50px + 25 * (100vw - 320px) / 1120);
+
+    --size-none:calc(0px + 0*(100vw - 320px));
+    --size-outer: calc(20px + 30 * (100vw - 320px) / 1480);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --size-50: 50px;
+    --size-75: 75px;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --size-none: 0px;
+    --size-outer: 50px;
+  }
+}
